@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E commerce || Shop</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        font-size: 50px;
+        line-height: 64px;
+        color: #222;
+      }
+      h2 {
+        font-size: 46px;
+        line-height: 54px;
+        color: #222;
+      }
+      h4 {
+        font-size: 20px;
+        color: #222;
+      }
+      h6 {
+        font-weight: 700;
+        font-size: 12px;
+      }
+      p {
+        font-size: 16px;
+        color: #465b52;
+        margin: 15px 0 20px 0;
+      }
+      .section-p1 {
+        padding: 40px 80px;
+      }
+      .section-m1 {
+        margin: 40px 0;
+      }
+      button.normal {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 15px 30px;
+        color: #000;
+        background-color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: 0.2s;
+      }
+
+      button.white {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 11px 18px;
+        color: #fff;
+        background-color: transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 1px solid white;
+        outline: none;
+        transition: 0.2s;
+      }
+      body {
+        width: 100%;
+      }
+
+      /* Header start */
+
+      #header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 80px;
+        background: #e3e6f3;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        z-index: 999;
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
+      #navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #navbar li {
+        list-style: none;
+        padding: 0 20px;
+        position: relative;
+      }
+      #navbar li a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1a1a1a;
+        transition: 0.3s ease;
+      }
+      #navbar li a:hover,
+      #navbar li a.active {
+        color: #088178;
+      }
+      #navbar li a.active::after,
+      #navbar li a:hover::after {
+        content: "";
+        width: 30%;
+        height: 2px;
+        background: #088178;
+        position: absolute;
+        bottom: -4px;
+        left: 20px;
+      }
+
+      #mobile {
+        display: none;
+        align-items: center;
+      }
+      #close {
+        display: none;
+      }
+
+      /*--------------- Product1 -------------------*/
+      #product1 {
+        text-align: center;
+      }
+      #product1 .pro-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        flex-wrap: wrap;
+      }
+      #product1 .pro-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        flex-wrap: wrap;
+      }
+      #product1 .pro {
+        width: 23%;
+        min-width: 250px;
+        padding: 10px 12px;
+        border: 1px solid #cce7d0;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+        margin: 15px 0;
+        transition: 0.2s ease;
+        position: relative;
+      }
+      #product1 .pro:hover {
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+      }
+      #product1 .pro img {
+        width: 100%;
+        border-radius: 20px;
+      }
+      #product1 .pro .des {
+        text-align: start;
+        padding: 10px 0;
+      }
+      #product1 .pro .des span {
+        color: #606063;
+        font-size: 12px;
+      }
+      #product1 .pro .des h5 {
+        padding-top: 7px;
+        color: #1a1a1a;
+        font-size: 14px;
+      }
+      #product1 .pro .des i {
+        font-size: 12px;
+        color: rgb(243, 181, 25);
+      }
+      #product1 .pro .des h4 {
+        padding-top: 7px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #088178;
+      }
+      #product1 .pro .cart {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50px;
+        background-color: #e8f6ea;
+        /* font-weight: 500; */
+        color: #088178;
+        border: 1px solid #cce7d0;
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+      }
+
+      /*--------------- footer -------------------*/
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      footer .col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      footer .logo {
+        margin-bottom: 30px;
+      }
+
+      footer h4 {
+        font-size: 14px;
+        padding-bottom: 20px;
+      }
+
+      footer p {
+        font-size: 13px;
+        margin: 0 0 8px 0;
+      }
+
+      footer a {
+        font-size: 13px;
+        text-decoration: none;
+        color: #222;
+        margin-bottom: 10px;
+      }
+
+      footer .follow {
+        margin-top: 20px;
+      }
+
+      footer .follow i {
+        color: #465b52;
+        padding-right: 4px;
+        cursor: pointer;
+      }
+
+      footer .install .row img {
+        border: 1px solid #088178;
+        border-radius: 6px;
+      }
+
+      footer .install img {
+        margin: 10px 0 15px 0;
+      }
+
+      footer .follow i:hover,
+      footer a:hover {
+        color: #088178;
+      }
+
+      footer .copyright {
+        width: 100%;
+        text-align: center;
+      }
+
+      @media (max-width: 799px) {
+        .section-p1 {
+          padding: 40px 40px;
+        }
+        #navbar {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          position: fixed;
+          top: 0;
+          right: -300px;
+          height: 100vh;
+          width: 300px;
+          background-color: #e3e6f3;
+          box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+          padding: 80px 0 0 10px;
+          transition: 0.3s;
+        }
+        #navbar li {
+          margin-bottom: 25px;
+        }
+        /* nav ul li a{
+                text-decoration: none;
+                font-size: 20px;
+                color: #1a1a1a;
+                font-weight: 600;
+                margin-bottom: 25px;
+            } */
+        #navbar.active {
+          right: 0px;
+        }
+        #mobile {
+          display: flex;
+          align-items: center;
+        }
+        #mobile i {
+          color: #1a1a1a;
+          font-size: 24px;
+          padding-left: 20px;
+        }
+        #close {
+          display: initial;
+          position: absolute;
+          top: 30px;
+          left: 30px;
+          color: #222;
+          font-size: 24px;
+        }
+        #lg-bag {
+          display: none;
+        }
+        #newsletter .form {
+          width: 70%;
+        }
+        footer .copyright {
+          text-align: start;
+        }
+      }
+
+      @media (max-width: 477px) {
+        .section-p1 {
+          padding: 20px;
+        }
+        #header {
+          padding: 10px 30px;
+        }
+        h1 {
+          font-size: 38px;
+        }
+        h2 {
+          font-size: 32px;
+        }
+        footer .copyright {
+          text-align: start;
+        }
+        /* single product */
+        #prodetails {
+          display: flex;
+          flex-direction: column;
+        }
+        #prodetails .single-pro-image {
+          width: 100%;
+          margin-right: 0px;
+        }
+        #prodetails .single-pro-details {
+          width: 100%;
+        }
+      }
+
+      /* single product */
+
+      #prodetails {
+        display: flex;
+        margin-top: 20px;
+      }
+      #prodetails .single-pro-image {
+        width: 40%;
+        margin-right: 50px;
+      }
+      #prodetails .single-pro-image .small-img-group {
+        display: flex;
+        justify-content: space-between;
+      }
+      #prodetails .single-pro-image .small-img-col {
+        flex-basis: 24%;
+        cursor: pointer;
+      }
+      #prodetails .single-pro-details {
+        width: 50%;
+        padding-top: 30px;
+      }
+      #prodetails .single-pro-details h4 {
+        padding: 40px 0 20px 0;
+      }
+      #prodetails .single-pro-details h2 {
+        font-size: 26px;
+      }
+      #prodetails .single-pro-details select {
+        display: block;
+        padding: 5px 10px;
+        margin-bottom: 10px;
+      }
+      #prodetails .single-pro-details input {
+        width: 50px;
+        height: 47px;
+        padding-left: 10px;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+      #prodetails .single-pro-details input:focus {
+        outline: none;
+      }
+      #prodetails .single-pro-details button {
+        background-color: #088178;
+        color: #fff;
+      }
+      #prodetails .single-pro-details span {
+        line-height: 25px;
+      }
+      #prodetails .single-pro-details h5 {
+        padding-top: 20px;
+      }
+      #prodetails .single-pro-details h5 span {
+        color: #b7b7b7;
+        font-size: 12px;
+        text-decoration: line-through;
+      }
+    </style>
+    <script src="data.js"></script>
+  </head>
+  <body>
+    <section id="header">
+      <a href="index.html"
+        ><img src="/img/logo.png" alt="logo" class="logo" width="150px"
+      /></a>
+      <div>
+        <ul id="navbar">
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    <section id="prodetails" class="section-p1">
+      <div class="single-pro-image">
+        <img src="img/products/f1.jpg" width="100%" id="MainImg" alt="" />
+
+        <div class="small-img-group">
+          <div class="small-img-col">
+            <img
+              src="img/products/f1.jpg"
+              width="100%"
+              class="small-img"
+              alt=""
+            />
+          </div>
+          <div class="small-img-col">
+            <img
+              src="img/products/f2.jpg"
+              width="100%"
+              class="small-img"
+              alt=""
+            />
+          </div>
+          <div class="small-img-col">
+            <img
+              src="img/products/f3.jpg"
+              width="100%"
+              class="small-img"
+              alt=""
+            />
+          </div>
+          <div class="small-img-col">
+            <img
+              src="img/products/f4.jpg"
+              width="100%"
+              class="small-img"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="single-pro-details">
+        <h6>Home / T-Shirt</h6>
+        <h4>Men's Fashion T-Shirt</h4>
+        <h2>$139.00</h2>
+        <select>
+          <option>Select Size</option>
+          <option>XL</option>
+          <option>XXL</option>
+          <option>Small</option>
+          <option>Large</option>
+        </select>
+        <input type="number" value="1" />
+        <button class="normal">Add To Cart</button>
+        <h4>Product Details</h4>
+        <span
+          >Give your summer wardrobe a style upgrade with the HRX Men's Active
+          T-Shirt. Team it with a pair of shorts for your morning workout or a
+          denims for an evening out with the guys.
+        </span>
+      </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>Featured Products</h2>
+      <p>Summer Collection New Modern Design</p>
+      <div class="pro-container">
+        <div class="pro">
+          <img src="img/products/n5.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+        <div class="pro">
+          <img src="img/products/n6.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+        <div class="pro">
+          <img src="img/products/n7.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+
+        <div class="pro">
+          <img src="img/products/n8.jpg" alt="" />
+          <div class="des">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-Shirts</h5>
+            <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+          <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="section-p1" id="footer">
+      <div class="col">
+        <img class="logo" src="img/logo.png" alt="logo" />
+        <h4>Contact</h4>
+        <p>
+          <strong>Address:</strong> 562 wellington road, street 32, san
+          francisco
+        </p>
+        <p><strong>Phone:</strong> +01 2222 365 /(+91) 01 2345 6789</p>
+        <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest-p"></i>
+            <i class="fab fa-youtube"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="#">View Cart</a>
+        <a href="#">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="#">Help</a>
+      </div>
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <img src="img/pay/app.jpg" alt="" />
+          <img src="img/pay/play.jpg" alt="" />
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="img/pay/pay.png" alt="" />
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024, Ns Tech etc - HTML CSS Ecommerce Template</p>
+      </div>
+    </footer>
+
+    <!-- script for nav  -->
+    <script>
+      const bar = document.querySelector("#bar");
+      const close = document.querySelector("#close");
+      const nav = document.querySelector("#navbar");
+      if (bar) {
+        bar.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+      }
+      if (close) {
+        close.addEventListener("click", () => {
+          nav.classList.remove("active");
+        });
+      }
+    </script>
+
+    <script>
+      var MainImg = document.getElementById("MainImg");
+      var smallimg = document.getElementsByClassName("small-img");
+
+      smallimg[0].onclick = function () {
+        MainImg.src = smallimg[0].src;
+      };
+      smallimg[1].onclick = function () {
+        MainImg.src = smallimg[1].src;
+      };
+      smallimg[2].onclick = function () {
+        MainImg.src = smallimg[2].src;
+      };
+      smallimg[3].onclick = function () {
+        MainImg.src = smallimg[3].src;
+      };
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        function renderProducts(container, data, storageKey) {
+          container.innerHTML = `
+                <div class="single-pro-image">
+                <img src="${data[storageKey].image}" width="100%" id="MainImg" alt="" />
+
+                <div class="small-img-group">
+                  <div class="small-img-col">
+                    <img
+                      src="${data[storageKey].s1}"
+                      width="100%"
+                      class="small-img"
+                      alt=""
+                    />
+                  </div>
+                  <div class="small-img-col">
+                    <img
+                      src="${data[storageKey].s2}"
+                      width="100%"
+                      class="small-img"
+                      alt=""
+                    />
+                  </div>
+                  <div class="small-img-col">
+                    <img
+                      src="${data[storageKey].s3}"
+                      width="100%"
+                      class="small-img"
+                      alt=""
+                    />
+                  </div>
+                  <div class="small-img-col">
+                    <img
+                      src="${data[storageKey].s4}"
+                      width="100%"
+                      class="small-img"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="single-pro-details">
+                <h6>Home / T-Shirt</h6>
+                <h4>${data[storageKey].name}</h4>
+                <h2>$ ${data[storageKey].price}.00</h2>
+                <select>
+                  <option>Select Size</option>
+                  <option>XL</option>
+                  <option>XXL</option>
+                  <option>Small</option>
+                  <option>Large</option>
+                </select>
+                <input type="number" value="1" />
+                <button class="normal" onclick="addingToCart()">Add To Cart</button>
+                <h4>Product Details</h4>
+                <span>
+                  ${data[storageKey].about}
+                </span>
+              </div>
+                `;
+        }
+        const get_id = localStorage.getItem("data-id");
+        const procontainer = document.getElementById("prodetails");
+        if (get_id == 900) {
+          const index = localStorage.getItem("product1Id");
+          renderProducts(procontainer, mendata, index);
+        } else if (get_id == 1200) {
+          const index = localStorage.getItem("product2Id");
+          renderProducts(procontainer, womendata, index);
+        }else if (get_id == 600) {
+          const index = localStorage.getItem("product3Id");
+          renderProducts(procontainer, gadgets, index);
+        }else if (get_id == 300) {
+          const index = localStorage.getItem("product4Id");
+          renderProducts(procontainer, items, index);
+        }
+        //  <!-- script for slide -->
+
+        var MainImg = document.getElementById("MainImg");
+        var smallimg = document.getElementsByClassName("small-img");
+
+        smallimg[0].onclick = function () {
+          MainImg.src = smallimg[0].src;
+        };
+        smallimg[1].onclick = function () {
+          MainImg.src = smallimg[1].src;
+        };
+        smallimg[2].onclick = function () {
+          MainImg.src = smallimg[2].src;
+        };
+        smallimg[3].onclick = function () {
+          MainImg.src = smallimg[3].src;
+        };
+      });
+    </script>
+
+    <script>
+      function storeValues(dataID, productId) {
+        let existingData = localStorage.getItem("cart-data");
+        let objects = existingData ? JSON.parse(existingData) : [];
+
+        let obj = {};
+        obj[dataID] = productId;
+        objects.push(obj);
+
+        localStorage.setItem("cart-data", JSON.stringify(objects));
+      }
+
+      function addingToCart() {
+        var dataID = localStorage.getItem("data-id");
+        if (dataID == 900) {
+          var ProductId = localStorage.getItem("product1Id");
+        } else if (dataID == 1200) {
+          var ProductId = localStorage.getItem("product2Id");
+        } else if (dataID == 600) {
+          var ProductId = localStorage.getItem("product3Id");
+        } else if (dataID == 300) {
+          var ProductId = localStorage.getItem("product4Id");
+        }
+        storeValues(dataID, ProductId);
+        alert("Product Added To Cart");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E commers</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h1 {
+        font-size: 50px;
+        line-height: 64px;
+        color: #222;
+      }
+      h2 {
+        font-size: 46px;
+        line-height: 54px;
+        color: #222;
+      }
+      h4 {
+        font-size: 20px;
+        color: #222;
+      }
+      h6 {
+        font-weight: 700;
+        font-size: 12px;
+      }
+      p {
+        font-size: 16px;
+        color: #465b52;
+        margin: 15px 0 20px 0;
+      }
+      .section-p1 {
+        padding: 40px 80px;
+      }
+      .section-m1 {
+        margin: 40px 0;
+      }
+      button.normal {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 15px 30px;
+        color: #000;
+        background-color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        transition: 0.2s;
+      }
+
+      button.white {
+        font-size: 13px;
+        font-weight: 600;
+        padding: 11px 18px;
+        color: #fff;
+        background-color: transparent;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 1px solid white;
+        outline: none;
+        transition: 0.2s;
+      }
+      body {
+        width: 100%;
+      }
+
+      /* Header start */
+
+      #header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 80px;
+        background: #e3e6f3;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        z-index: 999;
+        position: sticky;
+        top: 0;
+        left: 0;
+      }
+      #navbar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #navbar li {
+        list-style: none;
+        padding: 0 20px;
+        position: relative;
+      }
+      #navbar li a {
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #1a1a1a;
+        transition: 0.3s ease;
+      }
+      #navbar li a:hover,
+      #navbar li a.active {
+        color: #088178;
+      }
+      #navbar li a.active::after,
+      #navbar li a:hover::after {
+        content: "";
+        width: 30%;
+        height: 2px;
+        background: #088178;
+        position: absolute;
+        bottom: -4px;
+        left: 20px;
+      }
+
+      #mobile {
+        display: none;
+        align-items: center;
+      }
+      #close {
+        display: none;
+      }
+
+      /* ----------------- Home Page --------------*/
+
+      #hero {
+        background-image: url(/img/hero4.png);
+        height: 90vh;
+        width: 100%;
+        background-size: cover;
+        background-position: top 25% right 0;
+        padding: 0 80px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      #hero h4 {
+        padding-bottom: 15px;
+      }
+      #hero h1 {
+        color: #088178;
+      }
+      #hero button {
+        background-image: url(/img/button.png);
+        background-color: transparent;
+        color: #088178;
+        border: 0;
+        padding: 14px 80px 14px 65px;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 15px;
+      }
+
+      /*--------------- featured -------------------*/
+
+      #feature {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      #feature .fe-box {
+        width: 180px;
+        text-align: center;
+        padding: 25px 15px;
+        box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+        border: 1px solid #cce7d0;
+        border-radius: 4px;
+        margin: 15px 0;
+      }
+      #feature .fe-box:hover {
+        box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.2);
+      }
+      #feature .fe-box img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      #feature .fe-box h6 {
+        display: inline-block;
+        padding: 9px 8px 6px 8px;
+        line-height: 1;
+        border-radius: 4px;
+        color: #088178;
+        background-color: #fddde4;
+      }
+      #feature .fe-box:nth-child(2) h6 {
+        background-color: #cdebbc;
+      }
+      #feature .fe-box:nth-child(3) h6 {
+        background-color: #d1e8f2;
+      }
+      #feature .fe-box:nth-child(4) h6 {
+        background-color: #cdd4f8;
+      }
+      #feature .fe-box:nth-child(5) h6 {
+        background-color: #f6dbf6;
+      }
+      #feature .fe-box:nth-child(6) h6 {
+        background-color: #fff2e5;
+      }
+
+      /* -------------- brands cointainar---------------- */
+      .brands {
+        display: flex;
+        align-items: center;
+        overflow: scroll;
+        scrollbar-width: none;
+        margin: auto;
+        padding: 10px 25px;
+      }
+      .brands-cointainer h1,
+      .exclusive-deals h1 {
+        font-size: 25px;
+        padding-top: 10px;
+      }
+      .brands img {
+        margin-right: 30px;
+        margin-left: 30px;
+      }
+
+      /*--------------- Product1 -------------------*/
+      #product1 {
+        text-align: center;
+      }
+      #product1 .pro-container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 20px;
+        flex-wrap: wrap;
+      }
+      #product1 .pro {
+        width: 23%;
+        min-width: 250px;
+        padding: 10px 12px;
+        border: 1px solid #cce7d0;
+        border-radius: 25px;
+        cursor: pointer;
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+        margin: 15px 0;
+        transition: 0.2s ease;
+        position: relative;
+      }
+      #product1 .pro:hover {
+        box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+      }
+      #product1 .pro img {
+        width: 100%;
+        height: 230px;
+        border-radius: 20px;
+      }
+      #product1 .pro .des {
+        text-align: start;
+        padding: 10px 0;
+      }
+      #product1 .pro .des span {
+        color: #606063;
+        font-size: 12px;
+      }
+      #product1 .pro .des h5 {
+        padding-top: 7px;
+        color: #1a1a1a;
+        font-size: 14px;
+      }
+      #product1 .pro .des i {
+        font-size: 12px;
+        color: rgb(243, 181, 25);
+      }
+      #product1 .pro .des h4 {
+        padding-top: 7px;
+        font-size: 15px;
+        font-weight: 700;
+        color: #088178;
+      }
+      #product1 .pro .cart {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50px;
+        background-color: #e8f6ea;
+        /* font-weight: 500; */
+        color: #088178;
+        border: 1px solid #cce7d0;
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+      }
+
+      /*--------------- Banner1 -------------------*/
+
+      #banner1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url(/img/banner/b2.jpg);
+        width: 100%;
+        height: 40vh;
+        background-size: cover;
+        background-position: center;
+      }
+      #banner1 h4 {
+        color: #fff;
+        font-size: 16px;
+      }
+      #banner1 h2 {
+        color: #fff;
+        font-size: 30px;
+        padding: 10px 0;
+      }
+      #banner1 h2 span {
+        color: #ef3636;
+      }
+      #banner1 button:hover {
+        background-color: #088178;
+        color: #fff;
+      }
+
+      /*--------------- sm-banner -------------------*/
+
+      #sm-banner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      #sm-banner .banner-box {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background-image: url(/img/banner/b17.jpg);
+        min-width: 650px;
+        height: 50vh;
+        background-size: cover;
+        background-position: center;
+        padding: 30px;
+      }
+      #sm-banner .banner-box2 {
+        background-image: url(/img/banner/b10.jpg);
+      }
+
+      #sm-banner h4 {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 300;
+      }
+      #sm-banner h2 {
+        color: #fff;
+        font-size: 28px;
+        font-weight: 800;
+      }
+      #sm-banner span {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        padding-bottom: 15px;
+      }
+      #sm-banner .banner-box:hover button {
+        background-color: #088178;
+        border: 1px solid #088178;
+      }
+
+      /*--------------- Banner2 -------------------*/
+
+      #banner2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url(/img/banner/b3.jpg);
+        width: 100%;
+        height: 40vh;
+        background-size: cover;
+        background-position: center;
+      }
+      #banner2 h4 {
+        color: #fff;
+        font-size: 16px;
+      }
+      #banner2 h2 {
+        color: #fff;
+        font-size: 30px;
+        padding: 10px 0;
+      }
+      #banner2 h2 span {
+        color: #ef3636;
+      }
+      #banner2 button:hover {
+        background-color: #088178;
+        color: #fff;
+      }
+
+      /*--------------- banner3 -------------------*/
+
+      #banner3 {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 80px;
+      }
+      #banner3 .banner-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background-image: url(/img/banner/b7.jpg);
+        min-width: 30%;
+        height: 30vh;
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      #banner3 .banner-box2 {
+        background-image: url(/img/banner/b4.jpg);
+      }
+      #banner3 .banner-box3 {
+        background-image: url(/img/banner/b18.jpg);
+      }
+      #banner3 h2 {
+        color: #fff;
+        font-weight: 900;
+        font-size: 22px;
+      }
+      #banner3 h3 {
+        color: #ec544e;
+        font-weight: 800;
+        font-size: 15px;
+      }
+
+      /*--------------- Banner2 -------------------*/
+
+      #banner4 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url(/img/banner/b5.jpg);
+        width: 100%;
+        height: 40vh;
+        background-size: cover;
+        background-position: center;
+      }
+      #banner4 h4 {
+        color: seagreen;
+        font-size: 16px;
+      }
+      #banner4 h2 {
+        color: orange;
+        font-size: 30px;
+        padding: 10px 0;
+      }
+      #banner4 h2 span {
+        color: #ef3636;
+      }
+      #banner4 button {
+        box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.3);
+      }
+      #banner4 button:hover {
+        background-color: #088178;
+        color: #fff;
+      }
+
+      /*--------------- footer -------------------*/
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      footer .col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      footer .logo {
+        margin-bottom: 30px;
+      }
+
+      footer h4 {
+        font-size: 14px;
+        padding-bottom: 20px;
+      }
+
+      footer p {
+        font-size: 13px;
+        margin: 0 0 8px 0;
+      }
+
+      footer a {
+        font-size: 13px;
+        text-decoration: none;
+        color: #222;
+        margin-bottom: 10px;
+      }
+
+      footer .follow {
+        margin-top: 20px;
+      }
+
+      footer .follow i {
+        color: #465b52;
+        padding-right: 4px;
+        cursor: pointer;
+      }
+
+      footer .install .row img {
+        border: 1px solid #088178;
+        border-radius: 6px;
+      }
+
+      footer .install img {
+        margin: 10px 0 15px 0;
+      }
+
+      footer .follow i:hover,
+      footer a:hover {
+        color: #088178;
+      }
+
+      footer .copyright {
+        width: 100%;
+        text-align: center;
+      }
+
+      @media (max-width: 799px) {
+        .section-p1 {
+          padding: 40px 40px;
+        }
+        #navbar {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          position: fixed;
+          top: 0;
+          right: -300px;
+          height: 100vh;
+          width: 300px;
+          background-color: #e3e6f3;
+          box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+          padding: 80px 0 0 10px;
+          transition: 0.3s;
+        }
+        #navbar li {
+          margin-bottom: 25px;
+        }
+        /* nav ul li a{
+                text-decoration: none;
+                font-size: 20px;
+                color: #1a1a1a;
+                font-weight: 600;
+                margin-bottom: 25px;
+            } */
+        #navbar.active {
+          right: 0px;
+        }
+        #mobile {
+          display: flex;
+          align-items: center;
+        }
+        #mobile i {
+          color: #1a1a1a;
+          font-size: 24px;
+          padding-left: 20px;
+        }
+        #close {
+          display: initial;
+          position: absolute;
+          top: 30px;
+          left: 30px;
+          color: #222;
+          font-size: 24px;
+        }
+        #lg-bag {
+          display: none;
+        }
+        #hero {
+          height: 70vh;
+          padding: 0 80px;
+          background-position: top 30% right 30%;
+        }
+        #feature {
+          justify-content: center;
+        }
+        #feature .fe-box {
+          margin: 15px 15px;
+        }
+        #product1 .pro-container {
+          justify-content: center;
+        }
+        #product1 .pro {
+          margin: 15px;
+        }
+        #banner {
+          height: 20vh;
+        }
+        #sm-banner .banner-box {
+          min-width: 100%;
+          height: 30vh;
+        }
+        #banner3 {
+          padding: 0 40px;
+        }
+        #banner3 .banner-box {
+          width: 28%;
+        }
+        #newsletter .form {
+          width: 70%;
+        }
+        footer .copyright {
+          text-align: start;
+        }
+      }
+
+      @media (max-width: 477px) {
+        .section-p1 {
+          padding: 20px;
+        }
+        #header {
+          padding: 10px 30px;
+        }
+        h1 {
+          font-size: 38px;
+        }
+        h2 {
+          font-size: 32px;
+        }
+        #hero {
+          padding: 0 20px;
+          background-position: 55%;
+        }
+        #feature {
+          justify-content: space-between;
+        }
+        #feature .fe-box {
+          width: 155px;
+          margin: 0 0 15px 0;
+        }
+        #product1 .pro {
+          width: 100%;
+        }
+        #banner {
+          height: 40vh;
+        }
+        #sm-banner .banner-box {
+          height: 40vh;
+        }
+        #sm-banner .banner-box2 {
+          margin-top: 20px;
+        }
+        #banner3 {
+          padding: 0 20px;
+        }
+        #banner3 .banner-box {
+          width: 100%;
+        }
+        #newsletter .form {
+          width: 100%;
+        }
+        footer .copyright {
+          text-align: start;
+        }
+      }
+    </style>
+    <script src="data.js"></script>
+  </head>
+  <body>
+    <section id="header">
+      <a href="index.html"
+        ><img src="/img/logo.png" alt="logo" class="logo" width="150px"
+      /></a>
+      <div>
+        <ul id="navbar">
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li>
+            <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+          </li>
+          <a href="#" id="close"><i class="fa-solid fa-xmark"></i></a>
+        </ul>
+      </div>
+      <div id="mobile">
+        <a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+        <i id="bar" class="fas fa-outdent"></i>
+      </div>
+    </section>
+
+    <section id="hero">
+      <h4>Big Billion Sale</h4>
+      <h2>Super deals</h2>
+      <h1>On all Products</h1>
+      <p>Save more with coupons & up to 80% off!</p>
+      <button>Shop Now</button>
+    </section>
+
+    <section id="feature" class="section-p1">
+      <div class="fe-box">
+        <img src="img/features/f1.png" alt="Free Shipping" />
+        <h6>Free Shipping</h6>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f2.png" alt="Online Order" />
+        <h6>Online Order</h6>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f3.png" alt="Save Money" />
+        <h6>Save Money</h6>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f4.png" alt="Promotions" />
+        <h6>Promotions</h6>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f5.png" alt="Happy Sell" />
+        <h6>Happy Sell</h6>
+      </div>
+      <div class="fe-box">
+        <img src="img/features/f6.png" alt="Support" />
+        <h6>F24/7 Support</h6>
+      </div>
+    </section>
+
+    <section class="brands-cointainer">
+      <h1>Trending Brands</h1>
+      <div class="brands">
+        <img src="/brands/samsung.png" alt="nike" width="150px" />
+        <img src="/brands/apple.png" alt="apple" width="70px" />
+        <img src="/brands/intel.png" alt="intel" width="100px" />
+        <img src="/brands/nike.png" alt="samsung" width="150px" />
+        <img src="/brands/hp.png" alt="hp" width="50px" />
+        <img src="/brands/sony.png" alt="sony" width="150px" />
+        <img src="/brands/zara.png" alt="zara" width="150px" />
+        <img src="/brands/nestle.png" alt="nestle" width="70px" />
+        <img src="/brands/philips.png" alt="philips" width="100px" />
+        <img src="/brands/mdonol.png" alt="mdonol" width="150px" />
+      </div>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>Featured Products</h2>
+      <p>Summer Collection New Modern Design</p>
+      <div class="pro-container step1"></div>
+    </section>
+
+    <section id="banner1" class="section-m1">
+      <h4>Branded Items</h4>
+      <h2>
+        Up to <span>70% Off</span>- All Saree & Kurthi'
+      </h2>
+      <button class="normal">Explore More</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>New Arrivals</h2>
+      <p>Branded Collection New Modern Design</p>
+      <div class="pro-container step2"></div>
+    </section>
+
+    <section id="sm-banner" class="section-p1">
+      <div class="banner-box">
+        <h4>crazy deals</h4>
+        <h2>buy 1 get 1 free</h2>
+        <span>The best classic dress is on sale at cara</span>
+        <button class="white">Learn More</button>
+      </div>
+      <div class="banner-box banner-box2">
+        <h4>spring/summer</h4>
+        <h2>upcoming season</h2>
+        <span>The best classic dress is on sale at cara</span>
+        <button class="white">Collection</button>
+      </div>
+    </section>
+
+    <section id="banner2" class="section-m1">
+      <h4>Exclusive Gadgets</h4>
+      <h2>
+        Black Friday <span>Super Sale</span>- Up to 30% Off'
+        <script src=""></script>
+      </h2>
+      <button class="normal">Explore More</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>-- SAVE 20% OFF --</h2>
+      <p>The Big Offer Day<br />Extra 5% on Selected Items</p>
+      <div class="pro-container step3"></div>
+    </section>
+
+    <section id="banner3" class="section-p1">
+      <div class="banner-box">
+        <h2>SEASONAL SALE</h2>
+        <h3>Winter Collection -50% OFF</h3>
+      </div>
+      <div class="banner-box banner-box2">
+        <h2>NEW FOOTWEAR COLLECTION</h2>
+        <h3>Spring/Summer 2022</h3>
+      </div>
+      <div class="banner-box banner-box3">
+        <h2>T-SHIRTS</h2>
+        <h3>New Trendy Prints</h3>
+      </div>
+    </section>
+
+    <section id="banner4" class="section-m1">
+      <h4>Fresh & Organic</h4>
+      <h2>Enjoy <span>Delecious</span> Foods</h2>
+      <button class="normal">Explore More</button>
+    </section>
+
+    <section id="product1" class="section-p1">
+      <h2>-- Mega Sale Offers --</h2>
+      <p>The Big Offer Days Back<br />Save upto 20% on Selected Items</p>
+      <div class="pro-container step4"></div>
+    </section>
+
+    <footer class="section-p1" id="footer">
+      <div class="col">
+        <img class="logo" src="img/logo.png" alt="logo" />
+        <h4>Contact</h4>
+        <p><strong>Address:</strong> 562 Main road , street 32, New York</p>
+        <p><strong>Phone:</strong> +01 2222 365 /(+91) 970 559 0944</p>
+        <p><strong>Hours:</strong> 10:00 - 18:00, Mon - Sat</p>
+        <div class="follow">
+          <h4>Follow Us</h4>
+          <div class="icon">
+            <i class="fab fa-facebook-f"></i>
+            <i class="fab fa-twitter"></i>
+            <a href="https://www.instagram.com/ns_charlie_/"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="https://in.pinterest.com/gnithyas/"
+              ><i class="fab fa-pinterest-p"></i
+            ></a>
+            <a href="https://www.youtube.com/@nscharlie05"
+              ><i class="fab fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <h4>About</h4>
+        <a href="#">About us</a>
+        <a href="#">Delivery Information</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Contact Us</a>
+      </div>
+      <div class="col">
+        <h4>My Account</h4>
+        <a href="#">Sign In</a>
+        <a href="cart.html">View Cart</a>
+        <a href="cart.html">My Wishlist</a>
+        <a href="#">Track My Order</a>
+        <a href="contact.html">Help</a>
+      </div>
+      <div class="col install">
+        <h4>Install App</h4>
+        <p>From App Store or Google Play</p>
+        <div class="row">
+          <a href="https://www.apple.com/in/app-store/"
+            ><img src="img/pay/app.jpg" alt="appStore"
+          /></a>
+          <a href="https://play.google.com/store/apps"
+            ><img src="img/pay/play.jpg" alt="playStore"
+          /></a>
+        </div>
+        <p>Secured Payment Gateways</p>
+        <img src="img/pay/pay.png" alt="" />
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024, Ns Tech etc - HTML CSS Ecommerce Template</p>
+      </div>
+    </footer>
+
+    <script>
+      const bar = document.querySelector("#bar");
+      const close = document.querySelector("#close");
+      const nav = document.querySelector("#navbar");
+      if (bar) {
+        bar.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+      }
+      if (close) {
+        close.addEventListener("click", () => {
+          nav.classList.remove("active");
+        });
+      }
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // mendata------------------>
+        const procontainer1 = document.querySelector(".step1");
+        mendata.forEach((item, index) => {
+          const pro = document.createElement("div");
+          pro.setAttribute("data-id", 900);
+          pro.addEventListener("click", () => {
+            localStorage.setItem("product1Id", index);
+            localStorage.setItem("data-id", 900);
+            window.location.href = "sproduct.html";
+          });
+          pro.classList.add("pro");
+          pro.innerHTML = `
+                <img src="${item.image}" alt="" />
+                <div class="des">
+                    <span>${item.brand}</span>
+                    <h5>${item.name}</h5>
+                    <h4>$ ${item.price}</h4>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                `;
+          procontainer1.appendChild(pro);
+        });
+
+        // womendata------------------>
+        const procontainer2 = document.querySelector(".step2");
+        womendata.forEach((item, index) => {
+          const pro = document.createElement("div");
+          pro.setAttribute("data-id", 1200);
+          pro.addEventListener("click", () => {
+            localStorage.setItem("product2Id", index);
+            localStorage.setItem("data-id", 1200);
+            window.location.href = "sproduct.html";
+          });
+          pro.classList.add("pro");
+          pro.innerHTML = `
+                <img src="${item.image}" alt="" />
+                <div class="des">
+                    <span>${item.brand}</span>
+                    <h5>${item.name}</h5>
+                    <h4>$ ${item.price}</h4>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                `;
+          procontainer2.appendChild(pro);
+        });
+
+        // gadgets data------------------>
+        const procontainer3 = document.querySelector(".step3");
+        gadgets.forEach((item, index) => {
+          const pro = document.createElement("div");
+          pro.setAttribute("data-id", 600);
+          pro.addEventListener("click", () => {
+            localStorage.setItem("product3Id", index);
+            localStorage.setItem("data-id", 600);
+            window.location.href = "sproduct.html";
+          });
+          pro.classList.add("pro");
+          pro.innerHTML = `
+                <img src="${item.image}" alt="" />
+                <div class="des">
+                    <span>${item.brand}</span>
+                    <h5>${item.name}</h5>
+                    <h4>$ ${item.price}</h4>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                `;
+          procontainer3.appendChild(pro);
+        });
+      });
+
+      // groceries data------------------>
+      const procontainer4 = document.querySelector(".step4");
+      items.forEach((item, index) => {
+        const pro = document.createElement("div");
+        pro.setAttribute("data-id", 300);
+        pro.addEventListener("click", () => {
+          localStorage.setItem("product4Id", index);
+          localStorage.setItem("data-id", 300);
+          window.location.href = "sproduct.html";
+        });
+        pro.classList.add("pro");
+        pro.innerHTML = `
+                <img src="${item.image}" alt="" />
+                <div class="des">
+                    <span>${item.brand}</span>
+                    <h5>${item.name}</h5>
+                    <h4>$ ${item.price}</h4>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></a>
+                `;
+        procontainer4.appendChild(pro);
+      });
+    </script>
+  </body>
+</html>
